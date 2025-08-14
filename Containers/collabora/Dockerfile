@@ -5,7 +5,7 @@ FROM collabora/code:25.04.4.1.1
 USER root
 ARG DEBIAN_FRONTEND=noninteractive
 
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
+COPY --chmod=775 Containers/collabora/healthcheck.sh /healthcheck.sh
 
 USER 1001
 

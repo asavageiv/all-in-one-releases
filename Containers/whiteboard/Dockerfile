@@ -9,8 +9,8 @@ RUN set -ex; \
     chmod 777 -R /tmp
 USER 65534
 
-COPY --chmod=775 start.sh /start.sh
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
+COPY --chmod=775 Containers/whiteboard/start.sh /start.sh
+COPY --chmod=775 Containers/whiteboard/healthcheck.sh /healthcheck.sh
 
 HEALTHCHECK CMD /healthcheck.sh
 

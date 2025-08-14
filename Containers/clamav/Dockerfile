@@ -14,9 +14,9 @@ RUN set -ex; \
     sed -i "s|^LocalSocket .*|LocalSocket /tmp/clamd.sock|g" /etc/clamav/clamd.conf; \
     freshclam --foreground --stdout
 
-COPY --chmod=775 start.sh /start.sh
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
-COPY --chmod=664 supervisord.conf /supervisord.conf
+COPY --chmod=775 Containers/clamav/start.sh /start.sh
+COPY --chmod=775 Containers/clamav/healthcheck.sh /healthcheck.sh
+COPY --chmod=664 Containers/clamav/supervisord.conf /supervisord.conf
 
 USER 100
 VOLUME /var/lib/clamav

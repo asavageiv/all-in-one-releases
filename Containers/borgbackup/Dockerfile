@@ -16,8 +16,8 @@ RUN set -ex; \
 
 VOLUME /root
 
-COPY --chmod=770 *.sh /
-COPY borg_excludes /
+COPY --chmod=770 Containers/borgbackup/*.sh /
+COPY Containers/borgbackup/borg_excludes /
 
 ENTRYPOINT ["/start.sh"]
 # hadolint ignore=DL3002

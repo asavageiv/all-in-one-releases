@@ -43,9 +43,9 @@ COPY --from=eturnal   --chmod=777 --chown=1000:1000 /opt/eturnal                
 COPY --from=nats      --chmod=777 --chown=1000:1000 /nats-server                        /usr/local/bin/nats-server
 COPY --from=signaling --chmod=777 --chown=1000:1000 /usr/bin/nextcloud-spreed-signaling /usr/local/bin/nextcloud-spreed-signaling
 
-COPY --chmod=775 start.sh /start.sh
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
-COPY --chmod=664 supervisord.conf /supervisord.conf
+COPY --chmod=775 Containers/talk/start.sh /start.sh
+COPY --chmod=775 Containers/talk/healthcheck.sh /healthcheck.sh
+COPY --chmod=664 Containers/talk/supervisord.conf /supervisord.conf
 
 RUN set -ex; \
     apk upgrade --no-cache -a; \

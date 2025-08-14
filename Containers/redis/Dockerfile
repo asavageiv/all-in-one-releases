@@ -2,7 +2,8 @@
 # From https://github.com/docker-library/redis/blob/master/7.2/alpine/Dockerfile
 FROM redis:7.2.10-alpine
 
-COPY --chmod=775 start.sh /start.sh
+COPY --chmod=775 /Containers/redis/start.sh /start.sh
+COPY --chmod=775 /Containers/redis/healthcheck.sh /healthcheck.sh
 
 RUN set -ex; \
     apk upgrade --no-cache -a; \
@@ -14,7 +15,6 @@ RUN set -ex; \
 # Get rid of unused binaries
     rm -f /usr/local/bin/gosu;
 
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
 
 USER 999
 ENTRYPOINT ["/start.sh"]

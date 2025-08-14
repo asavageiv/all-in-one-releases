@@ -9,9 +9,9 @@ RUN set -ex; \
     mkdir -p /var/www/domaincheck; \
     chown www-data:www-data -R /var/www; \
     chmod 777 -R /var/www/domaincheck
-COPY --chown=www-data:www-data lighttpd.conf /lighttpd.conf
+COPY --chown=www-data:www-data Containers/domaincheck/lighttpd.conf /lighttpd.conf
 
-COPY --chmod=775 start.sh /start.sh
+COPY --chmod=775 Containers/domaincheck/start.sh /start.sh
 
 USER www-data
 ENTRYPOINT ["/start.sh"]

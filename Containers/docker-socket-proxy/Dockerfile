@@ -13,8 +13,8 @@ RUN set -ex; \
         bind-tools; \
     chmod -R 777 /tmp
 
-COPY --chmod=775 *.sh /
-COPY --chmod=664 haproxy.cfg /haproxy.cfg
+COPY --chmod=775 Containers/docker-socket-proxy/*.sh /
+COPY --chmod=664 Containers/docker-socket-proxy/haproxy.cfg /haproxy.cfg
 
 ENTRYPOINT ["/start.sh"]
 HEALTHCHECK CMD /healthcheck.sh
