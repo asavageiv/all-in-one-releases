@@ -9,7 +9,7 @@ RUN set -ex; \
 
 COPY --from=watchtower /watchtower /watchtower
 
-COPY --chmod=775 start.sh /start.sh
+COPY --chmod=775 Containers/watchtower/start.sh /start.sh
 
 # hadolint ignore=DL3002
 USER root

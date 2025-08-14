@@ -16,7 +16,7 @@ RUN set -ex; \
     ; \
     rm -rf /var/lib/apt/lists/*;
 
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
+COPY --chmod=775 Containers/fulltextsearch/healthcheck.sh /healthcheck.sh
 
 USER 1000:0
 

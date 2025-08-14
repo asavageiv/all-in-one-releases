@@ -30,8 +30,8 @@ RUN set -ex; \
         bash
 
 COPY --from=go /go/bin/imaginary /usr/local/bin/imaginary
-COPY --chmod=775 start.sh /start.sh
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
+COPY --chmod=775 Containers/imaginary/start.sh /start.sh
+COPY --chmod=775 Containers/imaginary/healthcheck.sh /healthcheck.sh
 
 ENV PORT=9000
 

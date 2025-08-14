@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:latest
 FROM python:3.13.5-alpine3.22
 
-COPY --chmod=775 start.sh /start.sh
-COPY --chmod=775 healthcheck.sh /healthcheck.sh
+COPY --chmod=775 Containers/talk-recording/start.sh /start.sh
+COPY --chmod=775 Containers/talk-recording/healthcheck.sh /healthcheck.sh
 
 ENV RECORDING_VERSION=v0.1
 ENV ALLOW_ALL=false
